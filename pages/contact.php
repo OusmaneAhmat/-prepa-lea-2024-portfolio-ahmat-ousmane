@@ -60,10 +60,7 @@
             <input type="submit" value="Envoyer le message"> 
         </div>
         <br>
-    </form>
-
-
-
+        
         <?php
     $serveur = "localhost";
     $utilisateur = "root"; 
@@ -80,11 +77,8 @@
     $objet = isset($_POST['objet']) ? $_POST['objet'] : '';
     $message = isset($_POST['message']) ? $_POST['message'] : '';
 
-    if (empty($_POST)) {
-        echo 'le formulaire n\'a pas été soumis correctement';
-    }
     if (!empty($_POST)) {
-        echo "Formulaire soumis avec succès !"; 
+        // echo "Formulaire soumis avec succès !"; 
         $sql = "INSERT INTO contact (prenom, nom, email, telephone, message, objet)
         VALUES('$prenom','$nom', '$email', '$telephone', '$message', '$objet')" ;
         mysqli_query($connexion, $sql) ;
@@ -93,6 +87,10 @@
     }
 
     ?>
+
+    </form>
+
+
 
 </body>
 </html>
